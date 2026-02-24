@@ -15315,7 +15315,7 @@ components:
         DueDate:
           type: string
           description: "Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         Id:
           type: string
           description: Unique Id provided by eAccounting
@@ -15324,7 +15324,7 @@ components:
         InvoiceDate:
           type: string
           description: "Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         InvoiceNumber:
           type: integer
           description: Invoice number for this ledger item
@@ -15452,7 +15452,7 @@ components:
         DueDate:
           type: string
           description: "Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         Id:
           type: string
           description: Unique Id provided by eAccounting
@@ -15461,7 +15461,7 @@ components:
         InvoiceDate:
           type: string
           description: "Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         InvoiceNumber:
           type: integer
           description: The number of the invoice to create
@@ -17372,7 +17372,7 @@ components:
         OrderDate:
           type: string
           description: Expected date format YYYY-MM-DD
-          format: date-time
+          format: date
         Status:
           maximum: 4
           minimum: 1
@@ -17398,7 +17398,7 @@ components:
             - string
             - "null"
           description: Expected date format YYYY-MM-DD. Default value is null
-          format: date-time
+          format: date
         HouseWorkAmount:
           type: number
           description: Amount of Rot/Rut deduction on the order
@@ -17537,7 +17537,7 @@ components:
         OrderDate:
           type: string
           description: "Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         CustomerId:
           type: string
           description: Id of the customer for this order
@@ -18680,7 +18680,7 @@ components:
         VoucherDate:
           type: string
           description: "Bookkeeping date. Format: yyyy-mm-dd"
-          format: date-time
+          format: date
         VoucherText:
           maxLength: 1000
           minLength: 0
@@ -18793,7 +18793,7 @@ components:
             - "null"
           description: "Delivery date. Format: YYYY-MM-DD. This feature is for Dutch
             companies only which enabled agriculture support"
-          format: date-time
+          format: date
         HarvestYear:
           type:
             - integer
@@ -19037,7 +19037,7 @@ components:
             - string
             - "null"
           description: Expected date format YYYY-MM-DD. Default value is null
-          format: date-time
+          format: date
         DeliveryMethodCode:
           type:
             - string
@@ -19067,7 +19067,7 @@ components:
         DueDate:
           type: string
           description: Expected date format YYYY-MM-DD. Default value is null
-          format: date-time
+          format: date
         EuThirdParty:
           type: boolean
           description: Indicates whether the transaction is an EU triangulation sale
@@ -19166,7 +19166,7 @@ components:
         QuoteDate:
           type: string
           description: Expected date format YYYY-MM-DD. Default value is null
-          format: date-time
+          format: date
         RotPropertyType:
           type:
             - integer
@@ -19297,11 +19297,11 @@ components:
         QuoteDate:
           type: string
           description: "Format: YYYY-MM-DD. Default: null"
-          format: date-time
+          format: date
         DueDate:
           type: string
           description: "Format: YYYY-MM-DD. Default: null"
-          format: date-time
+          format: date
         RotPropertyType:
           type:
             - integer
@@ -20965,20 +20965,20 @@ components:
             - "null"
           description: "The date when the invoice was issued. Format: YYYY-MM-DD. Default:
             Today's date"
-          format: date-time
+          format: date
         PaymentDate:
           type:
             - string
             - "null"
           description: "The date when the invoice was paid. Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         DueDate:
           type:
             - string
             - "null"
           description: "The date when the invoice payment is due. Format: YYYY-MM-DD.
             Default: Date based on the supplier's terms of payment"
-          format: date-time
+          format: date
         InvoiceNumber:
           maxLength: 50
           minLength: 0
@@ -21269,7 +21269,7 @@ components:
             - "null"
           description: "The delivery date. Format: YYYY-MM-DD. This feature is for Dutch
             companies with agriculture support only"
-          format: date-time
+          format: date
         HarvestYear:
           type:
             - integer
@@ -21331,13 +21331,13 @@ components:
             - string
             - "null"
           description: "The date when the invoice was issued. Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         DueDate:
           type:
             - string
             - "null"
           description: "The date when the invoice payment is due. Format: YYYY-MM-DD"
-          format: date-time
+          format: date
         InvoiceNumber:
           maxLength: 50
           minLength: 0
@@ -21414,7 +21414,7 @@ components:
         VoucherDate:
           type: string
           description: "The date for the offset voucher. Format: YYYY-MM-DD"
-          format: date-time
+          format: date
       additionalProperties: false
       description: Request model for creating an offset between a credit invoice and
         debit invoices
@@ -22496,7 +22496,7 @@ components:
         VoucherDate:
           type: string
           description: "Bookkeeping date. Format: yyyy-mm-dd"
-          format: date-time
+          format: date
         VoucherText:
           maxLength: 1000
           minLength: 0
@@ -22579,7 +22579,7 @@ components:
         VoucherDate:
           type: string
           description: The voucher date in yyyy-mm-dd format
-          format: date-time
+          format: date
         VoucherText:
           maxLength: 1000
           minLength: 0
@@ -22704,7 +22704,7 @@ components:
             - "null"
           description: Delivery date in YYYY-MM-DD format. This feature is for Dutch
             companies only which have agriculture support enabled
-          format: date-time
+          format: date
         HarvestYear:
           type:
             - integer
@@ -22880,7 +22880,7 @@ components:
             - "null"
           description: "The delivery date. Format: YYYY-MM-DD. This feature is for Dutch
             companies with agriculture support only"
-          format: date-time
+          format: date
         HarvestYear:
           type:
             - integer
