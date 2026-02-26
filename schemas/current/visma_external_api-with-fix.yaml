@@ -35,7 +35,7 @@ paths:
           required: true
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -81,7 +81,7 @@ paths:
           required: true
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -1566,13 +1566,13 @@ paths:
           description: "Default: First day of the current month"
           schema:
             type: string
-            format: date-time
+            format: date
         - name: toDate
           in: query
           description: "Default: Last day of the current month"
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -1627,13 +1627,13 @@ paths:
           description: "Default: First day of the current month"
           schema:
             type: string
-            format: date-time
+            format: date
         - name: toDate
           in: query
           description: "Default: Last day of the current month"
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -2264,7 +2264,7 @@ paths:
           description: Date for the exchange rate
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -2539,7 +2539,7 @@ paths:
             date
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -7117,14 +7117,14 @@ paths:
           required: true
           schema:
             type: string
-            format: date-time
+            format: date
         - name: toDate
           in: path
           description: "End date for the export. Format: yyyy-MM-dd"
           required: true
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         "200":
           description: Request successful
@@ -9464,7 +9464,7 @@ components:
         BookkeepingDate:
           type: string
           description: Bookeeping date for this allocation period
-          format: date-time
+          format: date
         CreatedUtc:
           type: string
           description: When the allocation was created
@@ -9500,7 +9500,7 @@ components:
             - string
             - "null"
           description: Voucher date or Invoice date if no source voucher
-          format: date-time
+          format: date
           readOnly: true
         Description:
           type:
@@ -9619,23 +9619,20 @@ components:
         BookkeepingStartDate:
           type: string
           description: The start date for bookkeeping allocation
-          format: date-time
+          format: date
         AmountToAllocate:
           maximum: 1000000000
           minimum: 1
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The amount to allocate across periods
           format: double
         QuantityToAllocate:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
           description: Used for Dutch companies that use agricultural settings
           format: double
         WeightToAllocate:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -9894,19 +9891,16 @@ components:
         NetPrice:
           maximum: 99000000
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           format: double
         NetPriceWithDiscount:
           maximum: 99000000
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           format: double
         GrossPrice:
           maximum: 99000000
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           format: double
         CodingId:
@@ -9938,7 +9932,6 @@ components:
         StockBalance:
           maximum: 1000000000000000
           minimum: -1000000000000000
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Purpose: Sets the stock balance for this article Default: 0 When
             stock module is active, this is read only"
@@ -10478,7 +10471,7 @@ components:
           description: The interpreted transaction date of the source image (e.g., invoice
             date for an invoice, payment date for a receipt). Can be null if not
             interpreted.
-          format: date-time
+          format: date
           readOnly: true
         Ocr:
           type:
@@ -10501,7 +10494,7 @@ components:
             - string
             - "null"
           description: Payment due date
-          format: date-time
+          format: date
         SupplierCorporateIdentityNumber:
           type:
             - string
@@ -10512,7 +10505,7 @@ components:
             - string
             - "null"
           description: Invoice payment date
-          format: date-time
+          format: date
       additionalProperties: false
     AttachmentInterpretationApi:
       type: object
@@ -10650,7 +10643,7 @@ components:
             - string
             - "null"
           description: The date of the document (e.g., invoice or receipt date)
-          format: date-time
+          format: date
         ConfidenceDocumentDate:
           type: integer
           description: <strong>Possible values:</strong><br/>0 = Unknown,<br/>1 =
@@ -10769,7 +10762,7 @@ components:
             - string
             - "null"
           description: The due date for payment as specified in the document
-          format: date-time
+          format: date
         ConfidencePaymentDueDate:
           type: integer
           description: <strong>Possible values:</strong><br/>0 = Unknown,<br/>1 =
@@ -10893,13 +10886,13 @@ components:
             - string
             - "null"
           description: Invoice issue date
-          format: date-time
+          format: date
         DueDate:
           type:
             - string
             - "null"
           description: Payment due date
-          format: date-time
+          format: date
         Amount:
           type:
             - number
@@ -10932,7 +10925,7 @@ components:
             - string
             - "null"
           description: Invoice payment date
-          format: date-time
+          format: date
         Comment:
           type:
             - string
@@ -11080,7 +11073,7 @@ components:
         Date:
           type: string
           description: The date when this balance was recorded
-          format: date-time
+          format: date
       additionalProperties: false
     BankAccountApi:
       required:
@@ -11240,7 +11233,7 @@ components:
         TransactionDate:
           type: string
           description: Date when the bank transaction occurred
-          format: date-time
+          format: date
         IsReconciled:
           type: boolean
           description: True if the transaction has been matched
@@ -11406,7 +11399,7 @@ components:
             - string
             - "null"
           description: Delivery date set in order document
-          format: date-time
+          format: date
         RelatedInvoiceRows:
           type:
             - array
@@ -11552,35 +11545,30 @@ components:
         RutMaxAmountForPersBelow65Year:
           maximum: 999999
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: RUT maximum amount for persons below 65 years
           format: double
         RutMaxAmountForPersOver65Year:
           maximum: 999999
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: RUT maximum amount for persons over 65 years
           format: double
         RutReducedInvoicingPercent:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: RUT reduced invoicing percentage
           format: double
         RotReducedInvoicingMaxAmount:
           maximum: 999999
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: ROT reduced invoicing maximum amount
           format: double
         RotReducedInvoicingPercent:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: ROT reduced invoicing percentage
           format: double
@@ -11763,7 +11751,7 @@ components:
         AccountingLockedTo:
           type: string
           description: Date until which accounting is locked
-          format: date-time
+          format: date
           readOnly: true
         AccountingLockInterval:
           type: integer
@@ -12611,7 +12599,7 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
           readOnly: true
         TaxDeductionNumber:
           type:
@@ -12873,7 +12861,6 @@ components:
         DiscountPercentage:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,4})?"
           type: number
           description: "Format: 4 decimals"
           format: double
@@ -12917,12 +12904,12 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         AutoInvoiceRegistrationRequestSentDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         EmailAddresses:
           type:
             - array
@@ -13143,7 +13130,6 @@ components:
         DiscountPercentage:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,4})?"
           type: number
           description: "Format: 4 decimals"
           format: double
@@ -13187,12 +13173,12 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         AutoInvoiceRegistrationRequestSentDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         EmailAddresses:
           type:
             - array
@@ -13303,17 +13289,17 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         DueDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         DeliveryDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         RotReducedInvoicingType:
           $ref: '#/components/schemas/RotReducedInvoicingType'
         MaxAllowedTaxReductionAmount:
@@ -13322,7 +13308,6 @@ components:
           format: double
           readOnly: true
         RotReducedInvoicingAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -13697,7 +13682,7 @@ components:
             - "null"
           description: Last payment reminder date for the overdue invoice. Null if no
             payment reminder has been sent.
-          format: date-time
+          format: date
           readOnly: true
         UsesGreenTechnology:
           type: boolean
@@ -13722,7 +13707,7 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
           readOnly: true
         PaymentStatus:
           type: integer
@@ -13803,7 +13788,7 @@ components:
           readOnly: true
         EventDate:
           type: string
-          format: date-time
+          format: date
           readOnly: true
         CreatedUtc:
           type: string
@@ -14005,7 +13990,6 @@ components:
           format: double
           readOnly: true
         RotReducedInvoicingAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals."
           format: double
@@ -14243,18 +14227,18 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         DueDate:
           type:
             - string
             - "null"
           description: Due date of the customer invoice draft
-          format: date-time
+          format: date
         DeliveryDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         TotalAmount:
           type: number
           format: double
@@ -14338,7 +14322,6 @@ components:
         RotReducedInvoicingType:
           $ref: '#/components/schemas/RotReducedInvoicingType'
         RotReducedInvoicingAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals."
           format: double
@@ -14376,18 +14359,18 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         DueDate:
           type:
             - string
             - "null"
           description: Due date of the customer invoice draft
-          format: date-time
+          format: date
         DeliveryDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         IncludesVat:
           type:
             - boolean
@@ -14474,7 +14457,6 @@ components:
             then discount of the row is in percentage.
           readOnly: true
         DiscountFixedAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -14484,12 +14466,10 @@ components:
         DiscountPercentage:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,4})?"
           type: number
           description: "Format: 4 decimals allowed. Discount of the row in percentage."
           format: double
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals. Quantity of the article on the row."
           format: double
@@ -14661,7 +14641,7 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         RotReducedInvoicingPropertyName:
           type:
             - string
@@ -14717,7 +14697,7 @@ components:
             - string
             - "null"
           description: Due date for the invoice
-          format: date-time
+          format: date
         RotReducedInvoicingPropertyName:
           type:
             - string
@@ -14844,7 +14824,6 @@ components:
           description: True if the discount on the row is a fixed amount, false otherwise
           readOnly: true
         DiscountFixedAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -14855,12 +14834,10 @@ components:
         DiscountPercentage:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,4})?"
           type: number
           description: "Percentage discount n the row. Format: 4 decimals"
           format: double
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 4 decimals"
           format: double
@@ -15025,7 +15002,7 @@ components:
             - string
             - "null"
           description: The anticipated date when customer loss is expected (if applicable).
-          format: date-time
+          format: date
           readOnly: true
         AnticipatedCustomerLossAmount:
           type:
@@ -15051,12 +15028,12 @@ components:
         InvoiceDate:
           type: string
           description: The date when the invoice was issued.
-          format: date-time
+          format: date
           readOnly: true
         InvoiceDueDate:
           type: string
           description: The due date for payment of the invoice.
-          format: date-time
+          format: date
           readOnly: true
         InvoiceNumber:
           type: integer
@@ -15165,7 +15142,7 @@ components:
         Date:
           type: string
           description: Date of the valuation history entry.
-          format: date-time
+          format: date
           readOnly: true
         InvoiceCurrencyCode:
           maxLength: 3
@@ -15388,11 +15365,11 @@ components:
         InvoiceDate:
           type: string
           description: Invoice date to use when creating the item
-          format: date-time
+          format: date
         DueDate:
           type: string
           description: Due date to use when creating the item
-          format: date-time
+          format: date
         PaymentReferenceNumber:
           type:
             - string
@@ -15627,17 +15604,17 @@ components:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         EndDate:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         LatestDirectDebit:
           type:
             - string
             - "null"
-          format: date-time
+          format: date
         Bic:
           maxLength: 11
           minLength: 0
@@ -16013,7 +15990,7 @@ components:
         Date:
           type: string
           description: Date of the exchange rate
-          format: date-time
+          format: date
           readOnly: true
         SourceCurrency:
           type:
@@ -16044,11 +16021,11 @@ components:
         StartDate:
           type: string
           description: The start date of the fiscal year
-          format: date-time
+          format: date
         EndDate:
           type: string
           description: The end date of the fiscal year
-          format: date-time
+          format: date
         IsLockedForAccounting:
           type: boolean
           description: Indicates if the fiscal year is locked for accounting purposes
@@ -16318,7 +16295,7 @@ components:
             - string
             - "null"
           description: The bookkeeping date
-          format: date-time
+          format: date
         UndoVoucherId:
           type:
             - string
@@ -16330,7 +16307,7 @@ components:
             - string
             - "null"
           description: The undo bookkeeping date
-          format: date-time
+          format: date
         Type:
           type: integer
           description: <strong>Possible values:</strong><br/>0 = Depreciation,<br/>1 =
@@ -16383,7 +16360,7 @@ components:
         PurchaseDate:
           type: string
           description: The purchase date of the inventory item
-          format: date-time
+          format: date
         InventoryItemStatus:
           type: integer
           description: <strong>Possible values:</strong><br/>1 = Inactive,<br/>2 =
@@ -16412,13 +16389,13 @@ components:
             - string
             - "null"
           description: The first depreciation date
-          format: date-time
+          format: date
         LatestDepreciationDate:
           type:
             - string
             - "null"
           description: The latest depreciation date
-          format: date-time
+          format: date
         ResidualValue:
           type:
             - number
@@ -16506,7 +16483,7 @@ components:
           description: "Future dates cannot be set. Date format: yyyy-mm-dd. Payment date
             must be sent in the timezone of the company instead of user's
             location timezone."
-          format: date-time
+          format: date
         Reference:
           maxLength: 100
           minLength: 0
@@ -17160,7 +17137,6 @@ components:
           format: uuid
           readOnly: true
         Amount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals"
           format: double
@@ -17177,25 +17153,20 @@ components:
           format: date-time
           readOnly: true
         VatAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           format: double
         RoundingsAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           format: double
         DeliveredAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals"
           format: double
         DeliveredVatAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals"
           format: double
         DeliveredRoundingsAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals"
           format: double
@@ -17460,7 +17431,7 @@ components:
             - string
             - "null"
           description: Expected date format YYYY-MM-DD. Default value is null
-          format: date-time
+          format: date
         RotReducedInvoicingType:
           $ref: '#/components/schemas/RotReducedInvoicingType'
         MaxAllowedTaxReductionAmount:
@@ -17647,7 +17618,6 @@ components:
           description: Number of the line in order on the row
           format: int32
         DeliveredQuantity:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: "Format: 2 decimals"
           format: double
@@ -17700,7 +17670,6 @@ components:
           description: True if the discount on the row is a fixed amount, false otherwise
           readOnly: true
         DiscountFixedAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -17711,12 +17680,10 @@ components:
         DiscountPercentage:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,4})?"
           type: number
           description: "Percentage discount on the row. Format: 4 decimals"
           format: double
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,4})?"
           type: number
           description: "Format: 4 decimals"
           format: double
@@ -18664,7 +18631,6 @@ components:
         LatePaymentFee:
           maximum: 10000000
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: Amount for late pament fee.
           format: double
@@ -18712,14 +18678,12 @@ components:
         DebitAmount:
           maximum: 1000000000
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: Debit amount.
           format: double
         CreditAmount:
           maximum: 1000000000
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: Credit amount.
           format: double
@@ -18772,7 +18736,6 @@ components:
           description: "Project Id. Source: Get from /v2/projects"
           format: uuid
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -18780,7 +18743,6 @@ components:
             agriculture support
           format: double
         Weight:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -18839,13 +18801,13 @@ components:
         StartDate:
           type: string
           description: Project start date
-          format: date-time
+          format: date
         EndDate:
           type:
             - string
             - "null"
           description: Project end date
-          format: date-time
+          format: date
         CustomerId:
           type:
             - string
@@ -18934,7 +18896,7 @@ components:
             - string
             - "null"
           description: "Default: null. Value will be set if the quote is approved"
-          format: date-time
+          format: date
           readOnly: true
         BackgroundId:
           type:
@@ -19403,7 +19365,6 @@ components:
           description: True if the discount on the row is a fixed amount, false otherwise
           readOnly: true
         DiscountFixedAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -19414,12 +19375,10 @@ components:
         DiscountPercentage:
           maximum: 1
           minimum: 0
-          pattern: "[-]?\\d+(.\\d{1,4})?"
           type: number
           description: "Percentage discount n the row. Format: 4 decimals"
           format: double
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,4})?"
           type: number
           description: "Format: 4 decimals"
           format: double
@@ -19595,7 +19554,7 @@ components:
             - "null"
         DueDate:
           type: string
-          format: date-time
+          format: date
         TotalAmountInvoiceCurrency:
           type: number
           format: double
@@ -19676,10 +19635,10 @@ components:
       properties:
         StartDate:
           type: string
-          format: date-time
+          format: date
         EndDate:
           type: string
-          format: date-time
+          format: date
       additionalProperties: false
     SalesDocumentAttachmentApi:
       type: object
@@ -20132,7 +20091,7 @@ components:
         BankBban:
           maxLength: 50
           minLength: 0
-          pattern: ^[a-zA-Z0-9]{1,35}$
+          pattern: ^$|^[a-zA-Z0-9]{1,35}$
           type:
             - string
             - "null"
@@ -20143,7 +20102,7 @@ components:
         BankBic:
           maxLength: 50
           minLength: 0
-          pattern: ^[a-zA-Z]{6}([a-zA-z0-9]{2}|[a-zA-z0-9]{5})$
+          pattern: ^$|^[a-zA-Z]{6}([a-zA-z0-9]{2}|[a-zA-z0-9]{5})$
           type:
             - string
             - "null"
@@ -20153,7 +20112,7 @@ components:
         BankCode:
           maxLength: 50
           minLength: 0
-          pattern: ^([a-zA-Z]{2})[a-zA-Z0-9]{3,}$
+          pattern: ^$|^([a-zA-Z]{2})[a-zA-Z0-9]{3,}$
           type:
             - string
             - "null"
@@ -20178,7 +20137,7 @@ components:
         BankIban:
           maxLength: 50
           minLength: 0
-          pattern: ^[a-zA-Z]{2}[0-9]{2}[a-zA-z0-9]{1,}$
+          pattern: ^$|^[a-zA-Z]{2}[0-9]{2}[a-zA-z0-9]{1,}$
           type:
             - string
             - "null"
@@ -20416,7 +20375,7 @@ components:
             - string
             - "null"
           description: The last invoice date of the supplier
-          format: date-time
+          format: date
           readOnly: true
         AccountingTemplateId:
           type:
@@ -20631,13 +20590,13 @@ components:
             - string
             - "null"
           description: The date when the invoice was issued
-          format: date-time
+          format: date
         PaymentDate:
           type:
             - string
             - "null"
           description: The date when the invoice was paid
-          format: date-time
+          format: date
           readOnly: true
         DueDate:
           type:
@@ -20645,7 +20604,7 @@ components:
             - "null"
           description: "The date when the invoice payment is due. Default: Date based on
             the supplier's terms of payment"
-          format: date-time
+          format: date
         InvoiceNumber:
           minLength: 1
           type: string
@@ -20987,28 +20946,23 @@ components:
             - "null"
           description: "The invoice number from the supplier. Maximum length: 50 characters"
         TotalAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The total amount of the invoice including VAT. Maximum 2 decimal
             places
           format: double
         Vat:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The total VAT amount. Maximum 2 decimal places
           format: double
         VatHigh:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The high VAT amount. Maximum 2 decimal places
           format: double
         VatMedium:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The medium VAT amount. Maximum 2 decimal places
           format: double
         VatLow:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The low VAT amount. Maximum 2 decimal places
           format: double
@@ -21226,12 +21180,10 @@ components:
           description: The project identifier. Get from /v2/projects
           format: uuid
         DebitAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The debit amount for this row. Maximum 2 decimal places
           format: double
         CreditAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The credit amount for this row. Maximum 2 decimal places
           format: double
@@ -21248,7 +21200,6 @@ components:
           description: "The line number for this row. Default: 1"
           format: int32
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -21256,7 +21207,6 @@ components:
             is for Dutch companies with agriculture support only
           format: double
         Weight:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -21304,7 +21254,6 @@ components:
           description: The account number for this row. Must be between 1 and 9999999999
           format: int64
         Amount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The amount for this row. Maximum 2 decimal places
           format: double
@@ -21346,13 +21295,11 @@ components:
             - "null"
           description: "The invoice number from the supplier. Maximum length: 50 characters"
         TotalAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The total amount of the invoice including VAT. Maximum 2 decimal
             places
           format: double
         Vat:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: The total VAT amount. Maximum 2 decimal places
           format: double
@@ -21383,7 +21330,7 @@ components:
             - string
             - "null"
           description: The invoice date
-          format: date-time
+          format: date
         SupplierName:
           type:
             - string
@@ -21454,7 +21401,7 @@ components:
             - string
             - "null"
           description: Due date of the invoice
-          format: date-time
+          format: date
         Vat:
           type:
             - number
@@ -21614,7 +21561,6 @@ components:
           description: Third cost center item. Get from /v2/costcenters
           format: uuid
         Quantity:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -21622,7 +21568,6 @@ components:
             support only)
           format: double
         Weight:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -21634,7 +21579,7 @@ components:
             - string
             - "null"
           description: Delivery date (Dutch companies with agriculture support only)
-          format: date-time
+          format: date
         HarvestYear:
           type:
             - integer
@@ -21642,12 +21587,10 @@ components:
           description: Harvest year (Dutch companies with agriculture support only)
           format: int32
         DebetAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: Debit amount with max 2 decimals
           format: double
         CreditAmount:
-          pattern: "[-]?\\d+(.\\d{1,2})?"
           type: number
           description: Credit amount with max 2 decimals
           format: double
@@ -21796,12 +21739,12 @@ components:
         InvoiceDate:
           type: string
           description: The date when the invoice was issued.
-          format: date-time
+          format: date
           readOnly: true
         InvoiceDueDate:
           type: string
           description: The due date for the invoice payment.
-          format: date-time
+          format: date
           readOnly: true
         InvoiceNumber:
           maxLength: 50
@@ -21911,7 +21854,7 @@ components:
         Date:
           type: string
           description: Date of the valuation history entry.
-          format: date-time
+          format: date
           readOnly: true
         InvoiceCurrencyCode:
           maxLength: 3
@@ -22000,11 +21943,11 @@ components:
         InvoiceDate:
           type: string
           description: Invoice date
-          format: date-time
+          format: date
         DueDate:
           type: string
           description: Due date
-          format: date-time
+          format: date
         PaymentReferenceNumber:
           type:
             - string
@@ -22369,7 +22312,7 @@ components:
         VatRateDate:
           type: string
           description: Vat rate start date
-          format: date-time
+          format: date
         VatRate:
           type: number
           description: The VAT rate as a percentage.
@@ -22394,12 +22337,12 @@ components:
         StartDate:
           type: string
           description: The start date of the VAT report period
-          format: date-time
+          format: date
           readOnly: true
         EndDate:
           type: string
           description: The end date of the VAT report period
-          format: date-time
+          format: date
           readOnly: true
         DocumentApprovalStatus:
           type: integer
@@ -22442,7 +22385,7 @@ components:
             - "null"
           description: "Purpose: If the vat report was undone this indicates the date of
             the action. Can be null if not undone"
-          format: date-time
+          format: date
           readOnly: true
         ModifiedUtc:
           type:
@@ -22629,14 +22572,12 @@ components:
         DebitAmount:
           maximum: 1000000000
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type: number
           description: The debit amount for this voucher row. Maximum 2 decimals allowed
           format: double
         CreditAmount:
           maximum: 1000000000
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type: number
           description: The credit amount for this voucher row. Maximum 2 decimals allowed
           format: double
@@ -22683,7 +22624,6 @@ components:
             /v2/projects"
           format: uuid
         Quantity:
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -22691,7 +22631,6 @@ components:
             companies only which have agriculture support enabled
           format: double
         Weight:
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -22776,7 +22715,7 @@ components:
         VoucherDate:
           type: string
           description: The date of the voucher.
-          format: date-time
+          format: date
           readOnly: true
       additionalProperties: false
     VoucherRowApi:
@@ -22799,14 +22738,12 @@ components:
         DebitAmount:
           maximum: 10000000000
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type: number
           description: The debit amount for this row. Maximum 2 decimal places
           format: double
         CreditAmount:
           maximum: 10000000000
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type: number
           description: The credit amount for this row. Maximum 2 decimal places
           format: double
@@ -22859,7 +22796,6 @@ components:
           description: The VAT amount for this row. Only for Denmark and Netherlands
           format: double
         Quantity:
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -22867,7 +22803,6 @@ components:
             is for Dutch companies with agriculture support only
           format: double
         Weight:
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -22903,7 +22838,7 @@ components:
         VoucherDate:
           type: string
           description: The voucher date
-          format: date-time
+          format: date
         VoucherText:
           maxLength: 1000
           minLength: 0
@@ -22933,14 +22868,12 @@ components:
         DebitAmount:
           maximum: 1000000000
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type: number
           description: Debit amount with maximum 2 decimals
           format: double
         CreditAmount:
           maximum: 1000000000
           minimum: 0
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type: number
           description: Credit amount with maximum 2 decimals
           format: double
@@ -22969,14 +22902,12 @@ components:
           description: VAT code ID for this row
           format: uuid
         Quantity:
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type:
             - number
             - "null"
           description: Quantity for Dutch agriculture support
           format: double
         Weight:
-          pattern: "[-]?\\d+(\\.\\d{1,2})?"
           type:
             - number
             - "null"
@@ -22987,7 +22918,7 @@ components:
             - string
             - "null"
           description: Delivery date for Dutch agriculture support
-          format: date-time
+          format: date
         HarvestYear:
           type:
             - integer
@@ -23163,7 +23094,7 @@ components:
         OrderDate:
           type: string
           description: Date when the order was placed
-          format: date-time
+          format: date
         OrderNumber:
           type:
             - string
